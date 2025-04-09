@@ -18,11 +18,17 @@ king = pygame.transform.scale(king,(40,80))
 queen = pygame.transform.scale(queen,(40,80))
 
 dt = 0
-kingPos = pygame.Vector2(260,560)
+kingPos = pygame.Vector2(260,480)
 mousePos = pygame.Vector2(0,0)
-mouseBoo = False
+#           WTorre1,WCaballo1,WAlfil1,WRey,WReina,WAlfil2,WCaballo2,WTorre2
+#           WPeon1,WPeon2,WPeon3,WPeon4,WPeon5,WPeon6,WPeon7,WPeon8
+#           BTorre1,BCaballo1,BAlfil1,BRey,BReina,BAlfil2,BCaballo2,BTorre2
+#           BPeon1,BPeon2,BPeon3,BPeon4,BPeon5,BPeon6,BPeon7,BPeon8
+mouseBoo = [False,False,False,False,False,False,False,False,
+            False,False,False,False,False,False,False,False,
+            False,False,False,False,False,False,False,False,
+            False,False,False,False,False,False,False,False,]
 #pygame.draw.rect(DISPLAYSURF,GREEN,(0,0,640,640))
-
 
 while True:
     for event in pygame.event.get():#Exit event
@@ -73,22 +79,45 @@ while True:
     """  
     
     if ((kingPos.x < mousePos.x < (kingPos.x + 80)) and (kingPos.y < mousePos.y < (kingPos.y + 80))):
-        mouseBoo = True
-        #mousePos = mouseIPos
-        #kingPos = pygame.Vector2(260,480)
-        #print(mousePos)
-        """
-        if ((260 < int(mousePos0.x) < 340 ) and ( 480 < int(mousePos0.y) < 560)):
-            kingPos = pygame.Vector2(260,480)
-            print("HI")  
-        """
-    #else:
-        #mouseBoo = False
+        mouseBoo[3] = True
 
-    if mouseBoo == True:
-        if ((260 < int(mousePos.x) < 340 ) and ( 480 < int(mousePos0.y) < 560)):
-            kingPos = pygame.Vector2(260,480)
-            mouseBoo = False
+    if mouseBoo[3] == True:
+        #print(mouseBoo)
+        #if ((260 < int(mousePos.x) < 340 ) and ( 480 < int(mousePos0.y) < 560)):
+        #    kingPos = pygame.Vector2(260,480)
+        #    mouseBoo[3] = False
+        if (((-80+kingPos.x)<mousePos.x<(kingPos.x + 160)) and ((-80+kingPos.y)<mousePos.y<(kingPos.y + 160))):
+            #print(mousePos)
+            if ((mousePos.x > kingPos.x) and (mousePos.y < kingPos.y)): #diagonal superior derecha
+                kingPos = pygame.Vector2(kingPos.x + 80,kingPos.y-80)
+                #print(mousePos,"Flag1")
+                mouseBoo[3] = False
+            #elif ((mousePos.x > kingPos.x) and (mousePos.y > kingPos.y)):#diagonal inferior derecha
+            #    print(mousePos,"FlagERROR")
+            #    kingPos = pygame.Vector2(kingPos.x + 80,kingPos.y+80)
+            #    mouseBoo[3] = False
+            elif ((mousePos.x < kingPos.x) and (mousePos.y < kingPos.y)):#diagonal superior izquierda
+                kingPos = pygame.Vector2(kingPos.x-80,kingPos.y-80)
+                #print(mousePos,"Flag2")
+                mouseBoo[3] = False
+            elif ((mousePos.x < kingPos.x) and (mousePos.y > kingPos.y)):#diagonal inferior izquierda
+                kingPos = pygame.Vector2(kingPos.x-80,kingPos.y+80)
+                #print(mousePos,"Flag3")
+                mouseBoo[3] = False
+            elif ((mousePos.y < kingPos.y)):#Recto arriba
+                print("FLAG")
+                kingPos = pygame.Vector2(kingPos.x,kingPos.y-80)
+                mouseBoo[3] = False
+            elif ((mousePos.x == kingPos.x) and (mousePos.y > kingPos.y)):#Recto abajo
+                kingPos = pygame.Vector2(kingPos.x,kingPos.y+80)
+                mouseBoo[3] = False
+            elif ((mousePos.x < kingPos.x) and (mousePos.y == kingPos.y)):#Recto izquierda
+                kingPos = pygame.Vector2(kingPos.x-80,kingPos.y)
+                mouseBoo[3] = False
+            elif ((mousePos.x > kingPos.x) and (mousePos.y == kingPos.y)):#Recto derecha
+                kingPos = pygame.Vector2(kingPos.x+80,kingPos.y)
+                mouseBoo[3] = False
+            
                 
     dt = clock.tick(60)/1000
   
