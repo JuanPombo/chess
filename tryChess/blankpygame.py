@@ -98,20 +98,20 @@ while True:
                 kingPos = pygame.Vector2(kingPos.x-80,kingPos.y-80)
                 #print(mousePos,"Flag2")
                 mouseBoo[3] = False
-            elif ((mousePos.x < kingPos.x) and (mousePos.y > kingPos.y)):#diagonal inferior izquierda
+            elif ((mousePos.x < kingPos.x) and (mousePos.y > kingPos.y+80)):#diagonal inferior izquierda
                 kingPos = pygame.Vector2(kingPos.x-80,kingPos.y+80)
                 #print(mousePos,"Flag3")
                 mouseBoo[3] = False
             elif ((mousePos.y < kingPos.y)):#Recto arriba
                 kingPos = pygame.Vector2(kingPos.x,kingPos.y-80)
                 mouseBoo[3] = False
-            elif ((mousePos.x == kingPos.x) and (mousePos.y > kingPos.y)):#Recto abajo
+            elif ((mousePos.y > kingPos.y+80)):#Recto abajo
                 kingPos = pygame.Vector2(kingPos.x,kingPos.y+80)
                 mouseBoo[3] = False
-            elif ((mousePos.x < kingPos.x) and (mousePos.y == kingPos.y)):#Recto izquierda
+            elif ((mousePos.x < kingPos.x)):#Recto izquierda
                 kingPos = pygame.Vector2(kingPos.x-80,kingPos.y)
                 mouseBoo[3] = False
-            elif ((mousePos.x > kingPos.x) and (mousePos.y == kingPos.y)):#Recto derecha
+            elif ((mousePos.x > kingPos.x+80)):#Recto derecha
                 kingPos = pygame.Vector2(kingPos.x+80,kingPos.y)
                 mouseBoo[3] = False
             
