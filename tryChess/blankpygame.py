@@ -29,12 +29,13 @@ mouseBoo = [False,False,False,False,False,False,False,False,
             False,False,False,False,False,False,False,False,
             False,False,False,False,False,False,False,False,]
 #pygame.draw.rect(DISPLAYSURF,GREEN,(0,0,640,640))
+flag = False
 
 while True:
     for event in pygame.event.get():#Exit event
         if event.type == pygame.MOUSEBUTTONDOWN:
             mousePos = pygame.Vector2(pygame.mouse.get_pos())
-            mousePos0 = pygame.Vector2(pygame.mouse.get_pos())
+            mouseCont = 0
         if event.type == QUIT:
             pygame.quit()
             sys.exit() 
@@ -78,24 +79,21 @@ while True:
     
     """  
     
-    if ((kingPos.x < mousePos.x < (kingPos.x + 80)) and (kingPos.y < mousePos.y < (kingPos.y + 80))):
+    if ((kingPos.x < mousePos.x < (kingPos.x + 80)) and (kingPos.y < mousePos.y < (kingPos.y + 80))): #Check if the mouse click-on the king
         mouseBoo[3] = True
 
-    if mouseBoo[3] == True:
+    if mouseBoo[3] == True:     #I need that the King does to the Rect movement and the diagonal inferior derecha
         #print(mouseBoo)
-        #if ((260 < int(mousePos.x) < 340 ) and ( 480 < int(mousePos0.y) < 560)):
-        #    kingPos = pygame.Vector2(260,480)
-        #    mouseBoo[3] = False
+
         if (((-80+kingPos.x)<mousePos.x<(kingPos.x + 160)) and ((-80+kingPos.y)<mousePos.y<(kingPos.y + 160))):
             #print(mousePos)
-            if ((mousePos.x > kingPos.x) and (mousePos.y < kingPos.y)): #diagonal superior derecha
+            if ((mousePos.x > kingPos.x + 80) and (mousePos.y < kingPos.y)): #diagonal superior derecha
                 kingPos = pygame.Vector2(kingPos.x + 80,kingPos.y-80)
                 #print(mousePos,"Flag1")
                 mouseBoo[3] = False
-            #elif ((mousePos.x > kingPos.x) and (mousePos.y > kingPos.y)):#diagonal inferior derecha
-            #    print(mousePos,"FlagERROR")
-            #    kingPos = pygame.Vector2(kingPos.x + 80,kingPos.y+80)
-            #    mouseBoo[3] = False
+            elif ((mousePos.x > kingPos.x+80) and (mousePos.y > kingPos.y+80)):#diagonal inferior derecha
+                kingPos = pygame.Vector2(kingPos.x + 80,kingPos.y+80)
+                mouseBoo[3] = False
             elif ((mousePos.x < kingPos.x) and (mousePos.y < kingPos.y)):#diagonal superior izquierda
                 kingPos = pygame.Vector2(kingPos.x-80,kingPos.y-80)
                 #print(mousePos,"Flag2")
@@ -105,7 +103,6 @@ while True:
                 #print(mousePos,"Flag3")
                 mouseBoo[3] = False
             elif ((mousePos.y < kingPos.y)):#Recto arriba
-                print("FLAG")
                 kingPos = pygame.Vector2(kingPos.x,kingPos.y-80)
                 mouseBoo[3] = False
             elif ((mousePos.x == kingPos.x) and (mousePos.y > kingPos.y)):#Recto abajo
