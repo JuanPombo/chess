@@ -139,14 +139,9 @@ while True:
         else:
             matrix[0][3][1] = False
     if matrix[0][0][1] == True:#ROOK
-        if (((mousePos.x < 640) and (matrix[0][0][0].y<mousePos.y<matrix[0][0][0].y + 80)) or (((matrix[0][0][0].x<mousePos.x<matrix[0][0][0].x + 80)) and (mousePos.y < 640))):#Range of Rook
-            #print("Flag0")
-            #print(range(int(matrix[0][0][0].y),int(matrix[0][0][0].y+80)))
-            #print(matrix[0][0][1])
-            if ((mousePos.x<matrix[0][0][0].x)or(mousePos.x>matrix[0][0][0].x+80)):# and (mousePos.x<matrix[0][0][0].x)and(mousePos.x>matrix[0][0][0].x+80)
-                #print("Flag1")
+        if ((matrix[0][0][0].y<mousePos.y<matrix[0][0][0].y + 80) or (matrix[0][0][0].x<mousePos.x<matrix[0][0][0].x + 80)):#Range of Rook
+            if (mousePos.x>matrix[0][0][0].x+80): #Straight movement to the right
                 if mousePos.x - matrix[0][0][0].x < 160:
-                    #print(rookB0Pos.x - mousePos.x)
                     move = pygame.Vector2(80,0)
                 elif mousePos.x - matrix[0][0][0].x < 240:
                     move = pygame.Vector2(80,0) *2
@@ -160,12 +155,29 @@ while True:
                     move = pygame.Vector2(80,0)*6
                 elif mousePos.x - matrix[0][0][0].x < 640:
                     move = pygame.Vector2(80,0)*7
-                #print(type(move),type(pygame.Vector2(80,0) * 2 ))
-                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) + move #matrix[0][0][0].x + (mousePos.x - matrix[0][0][0].x)
+                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) + move 
                 matrix[0][0][1] = False
-            if ((mousePos.y<matrix[0][0][0].y)or(mousePos.y>matrix[0][0][0].y+80)):
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.x<matrix[0][0][0].x):#Straight movement to the left
+                if matrix[0][0][0].x - mousePos.x <80:    
+                    move = pygame.Vector2(80,0)
+                elif matrix[0][0][0].x - mousePos.x < 160:
+                    move = pygame.Vector2(80,0) *2
+                elif matrix[0][0][0].x - mousePos.x < 240:
+                    move = pygame.Vector2(80,0) *3
+                elif matrix[0][0][0].x - mousePos.x < 320:
+                    move = pygame.Vector2(80,0)*4
+                elif matrix[0][0][0].x - mousePos.x <400:
+                    move = pygame.Vector2(80,0)*5
+                elif matrix[0][0][0].x - mousePos.x < 480:
+                    move = pygame.Vector2(80,0)*6
+                elif matrix[0][0][0].x - mousePos.x < 560:
+                    move = pygame.Vector2(80,0)*7
+                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) - move
+                matrix[0][0][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if (mousePos.y>matrix[0][0][0].y+80):#Straight movement to down
                 if mousePos.y - matrix[0][0][0].y < 160:
-                    #print(rookB0Pos.x - mousePos.x)
                     move = pygame.Vector2(0,80)
                 elif mousePos.y - matrix[0][0][0].y < 240:
                     move = pygame.Vector2(0,80) *2
@@ -179,9 +191,27 @@ while True:
                     move = pygame.Vector2(0,80)*6
                 elif mousePos.y - matrix[0][0][0].y < 640:
                     move = pygame.Vector2(0,80)*7
-                #print(type(move),type(pygame.Vector2(80,0) * 2 ))
-                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) + move #matrix[0][0][0].x + (mousePos.x - matrix[0][0][0].x)
+                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) + move
                 matrix[0][0][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.y<matrix[0][0][0].y):#Straight movement to up
+                if matrix[0][0][0].y - mousePos.y <80:    
+                    move = pygame.Vector2(0,80)
+                elif matrix[0][0][0].y - mousePos.y < 160:
+                    move = pygame.Vector2(0,80) *2
+                elif matrix[0][0][0].y - mousePos.y < 240:
+                    move = pygame.Vector2(0,80) *3
+                elif matrix[0][0][0].y - mousePos.y < 320:
+                    move = pygame.Vector2(0,80)*4
+                elif matrix[0][0][0].y - mousePos.y <400:
+                    move = pygame.Vector2(0,80)*5
+                elif matrix[0][0][0].y - mousePos.y < 480:
+                    move = pygame.Vector2(0,80)*6
+                elif matrix[0][0][0].y - mousePos.y < 560:
+                    move = pygame.Vector2(0,80)*7
+                matrix[0][0][0] = pygame.Vector2(matrix[0][0][0].x ,matrix[0][0][0].y) - move
+                matrix[0][0][1] = False
+                mousePos = pygame.Vector2(-1,-1)
         else:
             matrix[0][0][1] = False
 
