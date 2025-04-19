@@ -392,7 +392,7 @@ while True:
                     mousePos = pygame.Vector2(-1,-1)
                 if not (matrix[0][3][0].x<mousePos.x<matrix[0][3][0].x+80 and matrix[0][3][0].y<mousePos.y<matrix[0][3][0].y+80):#Check if the clik was in outside of his zone
                     matrix[0][3][1] = False
-    for i in range(8,16):
+    for i in range(8,16): #PEON'S BLACK 0-7
         if (matrix[0][i][1] == True):
             if matrix[0][i][2] == True:
                 if (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+240):
