@@ -82,8 +82,8 @@ while True:
     #DISPLAYSURF.blit(queenB,matrix[0][4][0])
     DISPLAYSURF.blit(rookB0,matrix[0][0][0])
     DISPLAYSURF.blit(rookB1,matrix[0][7][0])
-    #DISPLAYSURF.blit(knightB0,matrix[0][1][0])
-    #DISPLAYSURF.blit(knightB1,matrix[0][6][0])
+    DISPLAYSURF.blit(knightB0,matrix[0][1][0])
+    DISPLAYSURF.blit(knightB1,matrix[0][6][0])
     #DISPLAYSURF.blit(bishopB0,matrix[0][2][0])
     #DISPLAYSURF.blit(bishopB1,matrix[0][5][0])
     #DISPLAYSURF.blit(pawnB0,matrix[0][8][0])
@@ -321,7 +321,72 @@ while True:
                 mousePos = pygame.Vector2(-1,-1)
         else:
             matrix[0][7][1] = False
-  
+    if matrix[0][1][1] == True:#KNIGHT BLACK 0
+        if (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80):#Upper right corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y-160)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y):#Upper right down corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y-80)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower right up corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y+80)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower right corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y+160)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower left corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y+160)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower left up corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y+80)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y ):#Upper left down corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y-80)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80 ):#Upper left corner
+            matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y-160)
+            matrix[0][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+    if matrix[0][6][1] == True:#KNIGHT BLACK 1
+            if (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80):#Upper right corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y-160)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y):#Upper right down corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y-80)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower right up corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y+80)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower right corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y+160)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower left corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y+160)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower left up corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y+80)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y ):#Upper left down corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y-80)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80 ):#Upper left corner
+                matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y-160)
+                matrix[0][6][1] = False
+                mousePos = pygame.Vector2(-1,-1)
     
 
 
