@@ -868,16 +868,16 @@ while True:
                         matrix[1][i][1] = False
                         matrix[1][i][2] = False
                         mousePos = pygame.Vector2(-1,-1)
-            elif (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y):
+            if (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y):
                 matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x,matrix[1][i][0].y-80)
                 matrix[1][i][1] = False
                 mousePos = pygame.Vector2(-1,-1)
-            if not (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y<mousePos.y<matrix[1][i][0].y-160):
+            if not (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y+80):
                 matrix[1][i][1] = False
     
     
     
     
-    
+    #print(mousePos)
     pygame.display.flip()       
     pygame.display.update()
