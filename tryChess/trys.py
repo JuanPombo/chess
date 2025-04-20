@@ -469,7 +469,7 @@ while True:
             if not (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y<mousePos.y<matrix[0][i][0].y+160):
                 matrix[0][i][1] = False
     #WHITE PIECES
-    if matrix[1][4][1] == True:#KING BLACK
+    if matrix[1][4][1] == True:#KING WHITE
         if ((matrix[1][4][2] == True) and ((matrix[1][0][2] == True)or(matrix[1][7][2] == True))): #Moment when the king has the posibility of castling
             if (matrix[1][0][2]==True):
                 if (160<mousePos.x<240):
@@ -528,7 +528,7 @@ while True:
                 mousePos = pygame.Vector2(-1,-1)
         else:
             matrix[1][4][1] = False
-    if matrix[1][0][1] == True:#ROOK BLACK 0
+    if matrix[1][0][1] == True:#ROOK WHITE 0
         if ((matrix[1][0][0].y<mousePos.y<matrix[1][0][0].y + 80) or (matrix[1][0][0].x<mousePos.x<matrix[1][0][0].x + 80)):#Range of Rook    
             if (mousePos.x>matrix[1][0][0].x+80): #Right movement
                 for i in range(2,9):    
@@ -564,7 +564,7 @@ while True:
                 mousePos = pygame.Vector2(-1,-1)
         else:
             matrix[1][0][1] = False
-    if matrix[1][7][1] == True:#ROOK BLACK 1
+    if matrix[1][7][1] == True:#ROOK WHITE 1
         if ((matrix[1][7][0].y<mousePos.y<matrix[1][7][0].y + 80) or (matrix[1][7][0].x<mousePos.x<matrix[1][7][0].x + 80)):#Range of Rook
             if (mousePos.x>matrix[1][7][0].x+80): #Right movement
                 for i in range(2,9):    
@@ -600,7 +600,7 @@ while True:
                 mousePos = pygame.Vector2(-1,-1)
         else:
             matrix[1][7][1] = False
-    if matrix[1][1][1] == True:#KNIGHT BLACK 0
+    if matrix[1][1][1] == True:#KNIGHT WHITE 0
         if (matrix[1][1][0].x + 80 < mousePos.x < matrix[1][1][0].x + 160 and matrix[1][1][0].y - 160 < mousePos.y < matrix[1][1][0].y - 80):#Upper right corner
             matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+80,matrix[1][1][0].y-160)
             matrix[1][1][1] = False
@@ -633,7 +633,7 @@ while True:
             matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-80,matrix[1][1][0].y-160)
             matrix[1][1][1] = False
             mousePos = pygame.Vector2(-1,-1)
-    if matrix[1][6][1] == True:#KNIGHT BLACK 1
+    if matrix[1][6][1] == True:#KNIGHT WHITE 1
         if (matrix[1][6][0].x + 80 < mousePos.x < matrix[1][6][0].x + 160 and matrix[1][6][0].y - 160 < mousePos.y < matrix[1][6][0].y - 80):#Upper right corner
             matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+80,matrix[1][6][0].y-160)
             matrix[1][6][1] = False
@@ -666,7 +666,7 @@ while True:
             matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-80,matrix[1][6][0].y-160)
             matrix[1][6][1] = False
             mousePos = pygame.Vector2(-1,-1)
-    if matrix[1][2][1] == True:#BISHOP BLACK 0
+    if matrix[1][2][1] == True:#BISHOP WHITE 0
         for i in range(1,9):
             if not (mousePos.x < 0 and mousePos.y < 0):
                 if((matrix[1][2][0].x - i*80< mousePos.x < matrix[1][2][0].x-(i-1)*80) and (matrix[1][2][0].y - i*80 < mousePos.y < matrix[1][2][0].y-(i-1)*80)):#Upper left diagonally
@@ -687,7 +687,7 @@ while True:
                     mousePos = pygame.Vector2(-1,-1)
                 if not (matrix[1][2][0].x<mousePos.x<matrix[1][2][0].x+80 and matrix[1][2][0].y<mousePos.y<matrix[1][2][0].y+80):#Check if the clik was in outside of his zone
                     matrix[1][2][1] = False
-    if matrix[1][5][1] == True:#BISHOP BLACK 1
+    if matrix[1][5][1] == True:#BISHOP WHITE 1
         for i in range(1,9):
             if not (mousePos.x < 0 and mousePos.y < 0):
                 if((matrix[1][5][0].x - i*80< mousePos.x < matrix[1][5][0].x-(i-1)*80) and (matrix[1][5][0].y - i*80 < mousePos.y < matrix[1][5][0].y-(i-1)*80)):#Upper left diagonally
@@ -708,7 +708,7 @@ while True:
                     mousePos = pygame.Vector2(-1,-1)
                 if not (matrix[1][5][0].x<mousePos.x<matrix[1][5][0].x+80 and matrix[1][5][0].y<mousePos.y<matrix[1][5][0].y+80):#Check if the clik was in outside of his zone
                     matrix[1][5][1] = False                
-    if matrix[1][3][1] == True:#QUEEN BLACK
+    if matrix[1][3][1] == True:#QUEEN WHITE
         if ((matrix[1][3][0].y<mousePos.y<matrix[1][3][0].y + 80) or (matrix[1][3][0].x<mousePos.x<matrix[1][3][0].x + 80)):#Range of Rook    
             if (mousePos.x>matrix[1][3][0].x+80): #Right movement
                 for i in range(2,9):    
@@ -760,7 +760,7 @@ while True:
                     mousePos = pygame.Vector2(-1,-1)
                 if not (matrix[1][3][0].x<mousePos.x<matrix[1][3][0].x+80 and matrix[1][3][0].y<mousePos.y<matrix[1][3][0].y+80):#Check if the clik was in outside of his zone
                     matrix[1][3][1] = False
-    for i in range(8,16): #PEON'S BLACK 0-7
+    for i in range(8,16): #PEON'S WHITE 0-7
         if (matrix[1][i][1] == True):
             print("FLAG1")
             if matrix[1][i][2] == True:
