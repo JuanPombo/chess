@@ -31,8 +31,26 @@ pawnB4 = pygame.transform.scale(pygame.image.load("piezas/PawnB.png"),sizePiece)
 pawnB5 = pygame.transform.scale(pygame.image.load("piezas/PawnB.png"),sizePiece)
 pawnB6 = pygame.transform.scale(pygame.image.load("piezas/PawnB.png"),sizePiece)
 pawnB7 = pygame.transform.scale(pygame.image.load("piezas/PawnB.png"),sizePiece)
+#WHITE PIECES
+kingW = pygame.transform.scale(pygame.image.load("piezas/KingW.png"),sizePiece)
+queenW = pygame.transform.scale(pygame.image.load("piezas/QueenW.png"),sizePiece)
+rookW0 = pygame.transform.scale(pygame.image.load("piezas/RookW.png"),sizePiece)
+rookW1 = pygame.transform.scale(pygame.image.load("piezas/RookW.png"),sizePiece)
+knightW0 = pygame.transform.scale(pygame.image.load("piezas/KnightW.png"),sizePiece)
+knightW1 = pygame.transform.scale(pygame.image.load("piezas/KnightW.png"),sizePiece)
+bishopW0 = pygame.transform.scale(pygame.image.load("piezas/BishopW.png"),sizePiece)
+bishopW1 = pygame.transform.scale(pygame.image.load("piezas/BishopW.png"),sizePiece)
+pawnW0 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW1 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW2 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW3 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW4 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW5 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW6 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
+pawnW7 = pygame.transform.scale(pygame.image.load("piezas/PawnW.png"),sizePiece)
 
 
+#BLACK PIECES
 kingBPos = pygame.Vector2(320,0)
 queenBPos = pygame.Vector2(240,0)
 rookB0Pos = pygame.Vector2(0,0)
@@ -49,10 +67,30 @@ pawnB4Pos = pygame.Vector2(320,80)
 pawnB5Pos = pygame.Vector2(400,80)
 pawnB6Pos = pygame.Vector2(480,80)
 pawnB7Pos = pygame.Vector2(560,80)
+#WHITE PIECES
+kingWPos = pygame.Vector2(320,560)
+queenWPos = pygame.Vector2(240,560)
+rookW0Pos = pygame.Vector2(0,560)
+rookW1Pos = pygame.Vector2(560,560)
+knightW0Pos = pygame.Vector2(80,560)
+knightW1Pos = pygame.Vector2(480,560)
+bishopW0Pos = pygame.Vector2(160,560)
+bishopW1Pos = pygame.Vector2(400,560)
+pawnW0Pos = pygame.Vector2(0,480)
+pawnW1Pos = pygame.Vector2(80,480)
+pawnW2Pos = pygame.Vector2(160,480)
+pawnW3Pos = pygame.Vector2(240,480)
+pawnW4Pos = pygame.Vector2(320,480)
+pawnW5Pos = pygame.Vector2(400,480)
+pawnW6Pos = pygame.Vector2(480,480)
+pawnW7Pos = pygame.Vector2(560,480)
+
 mousePos = pygame.Vector2(0,0)
 
 matrix = [[[rookB0Pos,False,True],[knightB0Pos,False],[bishopB0Pos,False],[queenBPos,False],[kingBPos,False,True],[bishopB1Pos,False],[knightB1Pos,False],[rookB1Pos,False,True],
-           [pawnB0Pos,False,True],[pawnB1Pos,False,True],[pawnB2Pos,False,True],[pawnB3Pos,False,True],[pawnB4Pos,False,True],[pawnB5Pos,False,True],[pawnB6Pos,False,True],[pawnB7Pos,False,True]]]
+           [pawnB0Pos,False,True],[pawnB1Pos,False,True],[pawnB2Pos,False,True],[pawnB3Pos,False,True],[pawnB4Pos,False,True],[pawnB5Pos,False,True],[pawnB6Pos,False,True],[pawnB7Pos,False,True]],
+           [[rookW0Pos,False,True],[knightW0Pos,False],[bishopW0Pos,False],[queenWPos,False],[kingWPos,False,True],[bishopW1Pos,False],[knightW1Pos,False],[rookW1Pos,False,True],
+           [pawnW0Pos,False,True],[pawnW1Pos,False,True],[pawnW2Pos,False,True],[pawnW3Pos,False,True],[pawnW4Pos,False,True],[pawnW5Pos,False,True],[pawnW6Pos,False,True],[pawnW7Pos,False,True]]]
 move = pygame.Vector2(0,0)
 
 while True:
@@ -77,7 +115,7 @@ while True:
                     white = True
 
 
-
+    #BLACK PIECES
     DISPLAYSURF.blit(kingB,matrix[0][4][0])
     DISPLAYSURF.blit(queenB,matrix[0][3][0])
     DISPLAYSURF.blit(rookB0,matrix[0][0][0])
@@ -94,13 +132,31 @@ while True:
     DISPLAYSURF.blit(pawnB5,matrix[0][13][0])
     DISPLAYSURF.blit(pawnB6,matrix[0][14][0])
     DISPLAYSURF.blit(pawnB7,matrix[0][15][0])
+    #WHITE PIECES
+    DISPLAYSURF.blit(kingW,matrix[1][4][0])
+    DISPLAYSURF.blit(queenW,matrix[1][3][0])
+    DISPLAYSURF.blit(rookW0,matrix[1][0][0])
+    DISPLAYSURF.blit(rookW1,matrix[1][7][0])
+    DISPLAYSURF.blit(knightW0,matrix[1][1][0])
+    DISPLAYSURF.blit(knightW1,matrix[1][6][0])
+    DISPLAYSURF.blit(bishopW0,matrix[1][2][0])
+    DISPLAYSURF.blit(bishopW1,matrix[1][5][0])
+    DISPLAYSURF.blit(pawnW0,matrix[1][8][0])
+    DISPLAYSURF.blit(pawnW1,matrix[1][9][0])
+    DISPLAYSURF.blit(pawnW2,matrix[1][10][0])
+    DISPLAYSURF.blit(pawnW3,matrix[1][11][0])
+    DISPLAYSURF.blit(pawnW4,matrix[1][12][0])
+    DISPLAYSURF.blit(pawnW5,matrix[1][13][0])
+    DISPLAYSURF.blit(pawnW6,matrix[1][14][0])
+    DISPLAYSURF.blit(pawnW7,matrix[1][15][0])
+
 
     
-    for i in range(1):
+    for i in range(2):
         for j in range(16):
             if ((matrix[i][j][0].x < mousePos.x < (matrix[i][j][0].x + 80)) and (matrix[i][j][0].y < mousePos.y < (matrix[i][j][0].y + 80))): #Check if the mouse is click-on any piece
                 matrix[i][j][1] = True
-
+    #BLACK PIECES
     if matrix[0][4][1] == True:#KING BLACK
         if ((matrix[0][4][2] == True) and ((matrix[0][0][2] == True)or(matrix[0][7][2] == True))): #Moment when the king has the posibility of castling
             if (matrix[0][0][2]==True):
@@ -412,5 +468,325 @@ while True:
                 mousePos = pygame.Vector2(-1,-1)
             if not (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y<mousePos.y<matrix[0][i][0].y+160):
                 matrix[0][i][1] = False
+    #WHITE PIECES
+    if matrix[1][4][1] == True:#KING BLACK
+        if ((matrix[1][4][2] == True) and ((matrix[1][0][2] == True)or(matrix[1][7][2] == True))): #Moment when the king has the posibility of castling
+            if (matrix[1][0][2]==True):
+                if (160<mousePos.x<240):
+                   matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x - 160,matrix[1][4][0].y)
+                   matrix[1][0][0] = pygame.Vector2(matrix[1][0][0].x + 240,matrix[1][0][0].y)
+                   matrix[1][4][2] = False
+                   matrix[1][0][2] = False
+                   mousePos = pygame.Vector2(-1,-1)
+            if (matrix[1][7][2]==True):
+                if (480<mousePos.x<560):
+                   matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x + 160,matrix[1][4][0].y)
+                   matrix[1][7][0] = pygame.Vector2(matrix[1][7][0].x - 160,matrix[1][7][0].y)
+                   matrix[1][4][2] = False
+                   matrix[1][7][2] = False
+                   mousePos = pygame.Vector2(-1,-1)
+        if (((-80 + matrix[1][4][0].x)<mousePos.x<(matrix[1][4][0].x + 160)) and ((-80 + matrix[1][4][0].y)<mousePos.y<(matrix[1][4][0].y + 160))):#Range of the King
+            if ((mousePos.x > matrix[1][4][0].x + 80) and (mousePos.y < matrix[1][4][0].y)): #Upper right diagonally 
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x + 80,matrix[1][4][0].y-80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.x > matrix[1][4][0].x+80) and (mousePos.y > matrix[1][4][0].y+80)):#Lower right diagonally
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x + 80,matrix[1][4][0].y+80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.x < matrix[1][4][0].x) and (mousePos.y < matrix[1][4][0].y)):#Upper left diagonally
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y-80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.x < matrix[1][4][0].x) and (mousePos.y > matrix[1][4][0].y+80)):#Lowerleft diagonally
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y+80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.y < matrix[1][4][0].y)):#Upper
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x,matrix[1][4][0].y-80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.y > matrix[1][4][0].y+80)):#Lower
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x,matrix[1][4][0].y+80)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.x < matrix[1][4][0].x)):#left
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            elif ((mousePos.x > matrix[1][4][0].x+80)):#Right
+                matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x+80,matrix[1][4][0].y)
+                matrix[1][4][1] = False
+                matrix[1][4][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+        else:
+            matrix[1][4][1] = False
+    if matrix[1][0][1] == True:#ROOK BLACK 0
+        if ((matrix[1][0][0].y<mousePos.y<matrix[1][0][0].y + 80) or (matrix[1][0][0].x<mousePos.x<matrix[1][0][0].x + 80)):#Range of Rook    
+            if (mousePos.x>matrix[1][0][0].x+80): #Right movement
+                for i in range(2,9):    
+                    if matrix[1][0][0].x + 80*(i-1) < mousePos.x < matrix[1][0][0].x + 80*i:
+                        move = pygame.Vector2(80,0)*(i-1)
+                matrix[1][0][0] = pygame.Vector2(matrix[1][0][0].x ,matrix[1][0][0].y) + move 
+                matrix[1][0][1] = False
+                matrix[1][0][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.x<matrix[1][0][0].x):#Left movement
+                for i in range(2,9):
+                    if matrix[1][0][0].x - 80*(i-1) < mousePos.x < matrix[1][0][0].x - 80*(i-2):    
+                        move = pygame.Vector2(80,0) * (i-1)
+                matrix[1][0][0] = pygame.Vector2(matrix[1][0][0].x ,matrix[1][0][0].y) - move
+                matrix[1][0][1] = False
+                matrix[1][0][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (mousePos.y>matrix[1][0][0].y+80):#Lower movement
+                for i in range(2,9):    
+                    if matrix[1][0][0].y + 80*(i-1) < mousePos.y < matrix[1][0][0].y + 80*i:
+                        move = pygame.Vector2(0,80)*(i-1)
+                matrix[1][0][0] = pygame.Vector2(matrix[1][0][0].x ,matrix[1][0][0].y) + move
+                matrix[1][0][1] = False
+                matrix[1][0][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.y<matrix[1][0][0].y):#Upper movement
+                for i in range(2,9):
+                    if matrix[1][0][0].y - 80*(i-1) < mousePos.y < matrix[1][0][0].y - 80*(i-2):    
+                        move = pygame.Vector2(0,80) * (i-1)
+                matrix[1][0][0] = pygame.Vector2(matrix[1][0][0].x ,matrix[1][0][0].y) - move
+                matrix[1][0][1] = False
+                matrix[1][0][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+        else:
+            matrix[1][0][1] = False
+    if matrix[1][7][1] == True:#ROOK BLACK 1
+        if ((matrix[1][7][0].y<mousePos.y<matrix[1][7][0].y + 80) or (matrix[1][7][0].x<mousePos.x<matrix[1][7][0].x + 80)):#Range of Rook
+            if (mousePos.x>matrix[1][7][0].x+80): #Right movement
+                for i in range(2,9):    
+                    if matrix[1][7][0].x + 80*(i-1) < mousePos.x < matrix[1][7][0].x + 80*i:
+                        move = pygame.Vector2(80,0)*(i-1)
+                matrix[1][7][0] = pygame.Vector2(matrix[1][7][0].x ,matrix[1][7][0].y) + move 
+                matrix[1][7][1] = False
+                matrix[1][7][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.x<matrix[1][7][0].x):#Left movement
+                for i in range(2,9):
+                    if matrix[1][7][0].x - 80*(i-1) < mousePos.x < matrix[1][7][0].x - 80*(i-2):    
+                        move = pygame.Vector2(80,0) * (i-1)
+                matrix[1][7][0] = pygame.Vector2(matrix[1][7][0].x ,matrix[1][7][0].y) - move
+                matrix[1][7][1] = False
+                matrix[1][7][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (mousePos.y>matrix[1][7][0].y+80):#Lower movement
+                for i in range(2,9):    
+                    if matrix[1][7][0].y + 80*(i-1) < mousePos.y < matrix[1][7][0].y + 80*i:
+                        move = pygame.Vector2(0,80)*(i-1)
+                matrix[1][7][0] = pygame.Vector2(matrix[1][7][0].x ,matrix[1][7][0].y) + move
+                matrix[1][7][1] = False
+                matrix[1][7][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.y<matrix[1][7][0].y):#Upper movement
+                for i in range(2,9):
+                    if matrix[1][7][0].y - 80*(i-1) < mousePos.y < matrix[1][7][0].y - 80*(i-2):    
+                        move = pygame.Vector2(0,80) * (i-1)
+                matrix[1][7][0] = pygame.Vector2(matrix[1][7][0].x ,matrix[1][7][0].y) - move
+                matrix[1][7][1] = False
+                matrix[1][7][2] = False #The castling has been losted
+                mousePos = pygame.Vector2(-1,-1)
+        else:
+            matrix[1][7][1] = False
+    if matrix[1][1][1] == True:#KNIGHT BLACK 0
+        if (matrix[1][1][0].x + 80 < mousePos.x < matrix[1][1][0].x + 160 and matrix[1][1][0].y - 160 < mousePos.y < matrix[1][1][0].y - 80):#Upper right corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+80,matrix[1][1][0].y-160)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x + 160 < mousePos.x < matrix[1][1][0].x + 240 and matrix[1][1][0].y - 80 < mousePos.y < matrix[1][1][0].y):#Upper right down corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+160,matrix[1][1][0].y-80)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x + 160 < mousePos.x < matrix[1][1][0].x + 240 and matrix[1][1][0].y + 80 < mousePos.y < matrix[1][1][0].y + 160):#Lower right up corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+160,matrix[1][1][0].y+80)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x + 80 < mousePos.x < matrix[1][1][0].x + 160 and matrix[1][1][0].y + 160 < mousePos.y < matrix[1][1][0].y + 240):#Lower right corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+80,matrix[1][1][0].y+160)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x - 80 < mousePos.x < matrix[1][1][0].x and matrix[1][1][0].y + 160 < mousePos.y < matrix[1][1][0].y + 240):#Lower left corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-80,matrix[1][1][0].y+160)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x - 160 < mousePos.x < matrix[1][1][0].x - 80 and matrix[1][1][0].y + 80 < mousePos.y < matrix[1][1][0].y + 160):#Lower left up corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-160,matrix[1][1][0].y+80)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x - 160 < mousePos.x < matrix[1][1][0].x - 80 and matrix[1][1][0].y - 80 < mousePos.y < matrix[1][1][0].y ):#Upper left down corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-160,matrix[1][1][0].y-80)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][1][0].x - 80 < mousePos.x < matrix[1][1][0].x and matrix[1][1][0].y - 160 < mousePos.y < matrix[1][1][0].y - 80 ):#Upper left corner
+            matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-80,matrix[1][1][0].y-160)
+            matrix[1][1][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+    if matrix[1][6][1] == True:#KNIGHT BLACK 1
+        if (matrix[1][6][0].x + 80 < mousePos.x < matrix[1][6][0].x + 160 and matrix[1][6][0].y - 160 < mousePos.y < matrix[1][6][0].y - 80):#Upper right corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+80,matrix[1][6][0].y-160)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x + 160 < mousePos.x < matrix[1][6][0].x + 240 and matrix[1][6][0].y - 80 < mousePos.y < matrix[1][6][0].y):#Upper right down corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+160,matrix[1][6][0].y-80)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x + 160 < mousePos.x < matrix[1][6][0].x + 240 and matrix[1][6][0].y + 80 < mousePos.y < matrix[1][6][0].y + 160):#Lower right up corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+160,matrix[1][6][0].y+80)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x + 80 < mousePos.x < matrix[1][6][0].x + 160 and matrix[1][6][0].y + 160 < mousePos.y < matrix[1][6][0].y + 240):#Lower right corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+80,matrix[1][6][0].y+160)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x - 80 < mousePos.x < matrix[1][6][0].x and matrix[1][6][0].y + 160 < mousePos.y < matrix[1][6][0].y + 240):#Lower left corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-80,matrix[1][6][0].y+160)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x - 160 < mousePos.x < matrix[1][6][0].x - 80 and matrix[1][6][0].y + 80 < mousePos.y < matrix[1][6][0].y + 160):#Lower left up corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-160,matrix[1][6][0].y+80)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x - 160 < mousePos.x < matrix[1][6][0].x - 80 and matrix[1][6][0].y - 80 < mousePos.y < matrix[1][6][0].y ):#Upper left down corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-160,matrix[1][6][0].y-80)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+        elif (matrix[1][6][0].x - 80 < mousePos.x < matrix[1][6][0].x and matrix[1][6][0].y - 160 < mousePos.y < matrix[1][6][0].y - 80 ):#Upper left corner
+            matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-80,matrix[1][6][0].y-160)
+            matrix[1][6][1] = False
+            mousePos = pygame.Vector2(-1,-1)
+    if matrix[1][2][1] == True:#BISHOP BLACK 0
+        for i in range(1,9):
+            if not (mousePos.x < 0 and mousePos.y < 0):
+                if((matrix[1][2][0].x - i*80< mousePos.x < matrix[1][2][0].x-(i-1)*80) and (matrix[1][2][0].y - i*80 < mousePos.y < matrix[1][2][0].y-(i-1)*80)):#Upper left diagonally
+                    matrix[1][2][0] = pygame.Vector2(matrix[1][2][0].x - (i*80),matrix[1][2][0].y - (i*80))
+                    matrix[1][2][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][2][0].x + i*80< mousePos.x < matrix[1][2][0].x+(i+1)*80) and (matrix[1][2][0].y - i*80 < mousePos.y < matrix[1][2][0].y-(i-1)*80)):#Upper right diagonally
+                    matrix[1][2][0] = pygame.Vector2(matrix[1][2][0].x + (i*80),matrix[1][2][0].y - (i*80))
+                    matrix[1][2][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][2][0].x + i*80< mousePos.x < matrix[1][2][0].x+(i+1)*80) and (matrix[1][2][0].y +i*80 < mousePos.y < matrix[1][2][0].y+(i+1)*80)):#Lower  right diagonally
+                    matrix[1][2][0] = pygame.Vector2(matrix[1][2][0].x + (i*80),matrix[1][2][0].y + (i*80))
+                    matrix[1][2][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][2][0].x - i*80< mousePos.x < matrix[1][2][0].x-(i-1)*80) and (matrix[1][2][0].y +i*80 < mousePos.y < matrix[1][2][0].y+(i+1)*80)):#Lower left diagonaly
+                    matrix[1][2][0] = pygame.Vector2(matrix[1][2][0].x - (i*80),matrix[1][2][0].y + (i*80))
+                    matrix[1][2][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                if not (matrix[1][2][0].x<mousePos.x<matrix[1][2][0].x+80 and matrix[1][2][0].y<mousePos.y<matrix[1][2][0].y+80):#Check if the clik was in outside of his zone
+                    matrix[1][2][1] = False
+    if matrix[1][5][1] == True:#BISHOP BLACK 1
+        for i in range(1,9):
+            if not (mousePos.x < 0 and mousePos.y < 0):
+                if((matrix[1][5][0].x - i*80< mousePos.x < matrix[1][5][0].x-(i-1)*80) and (matrix[1][5][0].y - i*80 < mousePos.y < matrix[1][5][0].y-(i-1)*80)):#Upper left diagonally
+                    matrix[1][5][0] = pygame.Vector2(matrix[1][5][0].x - (i*80),matrix[1][5][0].y - (i*80))
+                    matrix[1][5][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][5][0].x + i*80< mousePos.x < matrix[1][5][0].x+(i+1)*80) and (matrix[1][5][0].y - i*80 < mousePos.y < matrix[1][5][0].y-(i-1)*80)):#Upper right diagonally
+                    matrix[1][5][0] = pygame.Vector2(matrix[1][5][0].x + (i*80),matrix[1][5][0].y - (i*80))
+                    matrix[1][5][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][5][0].x + i*80< mousePos.x < matrix[1][5][0].x+(i+1)*80) and (matrix[1][5][0].y +i*80 < mousePos.y < matrix[1][5][0].y+(i+1)*80)):#Lower  right diagonally
+                    matrix[1][5][0] = pygame.Vector2(matrix[1][5][0].x + (i*80),matrix[1][5][0].y + (i*80))
+                    matrix[1][5][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][5][0].x - i*80< mousePos.x < matrix[1][5][0].x-(i-1)*80) and (matrix[1][5][0].y +i*80 < mousePos.y < matrix[1][5][0].y+(i+1)*80)):#Lower left diagonaly
+                    matrix[1][5][0] = pygame.Vector2(matrix[1][5][0].x - (i*80),matrix[1][5][0].y + (i*80))
+                    matrix[1][5][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                if not (matrix[1][5][0].x<mousePos.x<matrix[1][5][0].x+80 and matrix[1][5][0].y<mousePos.y<matrix[1][5][0].y+80):#Check if the clik was in outside of his zone
+                    matrix[1][5][1] = False                
+    if matrix[1][3][1] == True:#QUEEN BLACK
+        if ((matrix[1][3][0].y<mousePos.y<matrix[1][3][0].y + 80) or (matrix[1][3][0].x<mousePos.x<matrix[1][3][0].x + 80)):#Range of Rook    
+            if (mousePos.x>matrix[1][3][0].x+80): #Right movement
+                for i in range(2,9):    
+                    if matrix[1][3][0].x + 80*(i-1) < mousePos.x < matrix[1][3][0].x + 80*i:
+                        move = pygame.Vector2(80,0)*(i-1)
+                matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x ,matrix[1][3][0].y) + move 
+                matrix[1][3][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.x<matrix[1][3][0].x):#Left movement
+                for i in range(2,9):
+                    if matrix[1][3][0].x - 80*(i-1) < mousePos.x < matrix[1][3][0].x - 80*(i-2):    
+                        move = pygame.Vector2(80,0) * (i-1)
+                matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x ,matrix[1][3][0].y) - move
+                matrix[1][3][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if (mousePos.y>matrix[1][3][0].y+80):#Lower movement
+                for i in range(2,9):    
+                    if matrix[1][3][0].y + 80*(i-1) < mousePos.y < matrix[1][3][0].y + 80*i:
+                        move = pygame.Vector2(0,80)*(i-1)
+                matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x ,matrix[1][3][0].y) + move
+                matrix[1][3][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if (0<mousePos.y<matrix[1][3][0].y):#Upper movement
+                for i in range(2,9):
+                    if matrix[1][3][0].y - 80*(i-1) < mousePos.y < matrix[1][3][0].y - 80*(i-2):    
+                        move = pygame.Vector2(0,80) * (i-1)
+                matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x ,matrix[1][3][0].y) - move
+                matrix[1][3][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+        else:
+            matrix[1][3][1] = False
+        for i in range(1,9):
+            if not (mousePos.x < 0 and mousePos.y < 0):
+                if((matrix[1][3][0].x - i*80< mousePos.x < matrix[1][3][0].x-(i-1)*80) and (matrix[1][3][0].y - i*80 < mousePos.y < matrix[1][3][0].y-(i-1)*80)):#Upper left diagonally
+                    matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x - (i*80),matrix[1][3][0].y - (i*80))
+                    matrix[1][3][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][3][0].x + i*80< mousePos.x < matrix[1][3][0].x+(i+1)*80) and (matrix[1][3][0].y - i*80 < mousePos.y < matrix[1][3][0].y-(i-1)*80)):#Upper right diagonally
+                    matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x + (i*80),matrix[1][3][0].y - (i*80))
+                    matrix[1][3][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][3][0].x + i*80< mousePos.x < matrix[1][3][0].x+(i+1)*80) and (matrix[1][3][0].y +i*80 < mousePos.y < matrix[1][3][0].y+(i+1)*80)):#Lower  right diagonally
+                    matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x + (i*80),matrix[1][3][0].y + (i*80))
+                    matrix[1][3][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                elif((matrix[1][3][0].x - i*80< mousePos.x < matrix[1][3][0].x-(i-1)*80) and (matrix[1][3][0].y +i*80 < mousePos.y < matrix[1][3][0].y+(i+1)*80)):#Lower left diagonaly
+                    matrix[1][3][0] = pygame.Vector2(matrix[1][3][0].x - (i*80),matrix[1][3][0].y + (i*80))
+                    matrix[1][3][1] = False
+                    mousePos = pygame.Vector2(-1,-1)
+                if not (matrix[1][3][0].x<mousePos.x<matrix[1][3][0].x+80 and matrix[1][3][0].y<mousePos.y<matrix[1][3][0].y+80):#Check if the clik was in outside of his zone
+                    matrix[1][3][1] = False
+    for i in range(8,16): #PEON'S BLACK 0-7
+        if (matrix[1][i][1] == True):
+            print("FLAG1")
+            if matrix[1][i][2] == True:
+                print("FLAG2",matrix[1][i][0].y-160,"<",mousePos.y)
+                if (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-160<mousePos.y<matrix[1][i][0].y):
+                    print("FLAG3")
+                    if (matrix[1][i][0].y - mousePos.y < 160):  #verificar
+                        matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x,matrix[1][i][0].y-80)
+                        matrix[1][i][1] = False
+                        matrix[1][i][2] = False
+                        mousePos = pygame.Vector2(-1,-1)
+                    else:
+                        matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x,matrix[1][i][0].y-160)
+                        matrix[1][i][1] = False
+                        matrix[1][i][2] = False
+                        mousePos = pygame.Vector2(-1,-1)
+            elif (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y):
+                matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x,matrix[1][i][0].y-80)
+                matrix[1][i][1] = False
+                mousePos = pygame.Vector2(-1,-1)
+            if not (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y<mousePos.y<matrix[1][i][0].y-160):
+                matrix[1][i][1] = False
+    
+    
+    
+    
+    
     pygame.display.flip()       
     pygame.display.update()
