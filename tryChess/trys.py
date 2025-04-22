@@ -715,7 +715,7 @@ while True:
                             matrix[0][i][2] = False
                             mousePos = pygame.Vector2(-1,-1)
                             matrix[2] = True
-                        else:
+                        else:#First movement
                             matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x,matrix[0][i][0].y+160)
                             matrix[0][i][1] = False
                             matrix[0][i][2] = False
@@ -726,6 +726,24 @@ while True:
                     matrix[0][i][1] = False
                     mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
+                elif (matrix[0][i][0].x-80<mousePos.x<matrix[0][i][0].x and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):#Capture to the left
+                     for j in range(16):
+                          if(matrix[0][i][0].x-80 == matrix[1][j][0].x and matrix[0][i][0].y+80 == matrix[1][j][0].y):
+                                matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x-80,matrix[0][i][0].y+80)
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                matrix[0][i][1] = False
+                                mousePos = pygame.Vector2(-1,-1)
+                                matrix[2] = True
+                elif (matrix[0][i][0].x+80<mousePos.x<matrix[0][i][0].x+160 and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):#Capture to the right
+                     for j in range(16):
+                          if(matrix[0][i][0].x+80 == matrix[1][j][0].x and matrix[0][i][0].y+80 == matrix[1][j][0].y):
+                                matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x+80,matrix[0][i][0].y+80)
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                matrix[0][i][1] = False
+                                mousePos = pygame.Vector2(-1,-1)
+                                matrix[2] = True
+
+                     
                 if not (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y<mousePos.y<matrix[0][i][0].y+160):
                     matrix[0][i][1] = False
     else:#The turn of the white pieces
@@ -1292,6 +1310,22 @@ while True:
                     matrix[1][i][1] = False
                     mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
+                elif (matrix[1][i][0].x-80<mousePos.x<matrix[1][i][0].x and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y):#Capture to the left
+                     for j in range(16):
+                          if(matrix[1][i][0].x-80 == matrix[0][j][0].x and matrix[1][i][0].y-80 == matrix[0][j][0].y):
+                                matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x-80,matrix[1][i][0].y-80)
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                matrix[1][i][1] = False
+                                mousePos = pygame.Vector2(-1,-1)
+                                matrix[2] = False
+                elif (matrix[1][i][0].x+80<mousePos.x<matrix[1][i][0].x+160 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y):#Capture to the right
+                     for j in range(16):
+                          if(matrix[1][i][0].x+80 == matrix[0][j][0].x and matrix[1][i][0].y-80 == matrix[0][j][0].y):
+                                matrix[1][i][0] = pygame.Vector2(matrix[1][i][0].x+80,matrix[1][i][0].y-80)
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                matrix[1][i][1] = False
+                                mousePos = pygame.Vector2(-1,-1)
+                                matrix[2] = False
                 if not (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y+80):
                     matrix[1][i][1] = False
 
