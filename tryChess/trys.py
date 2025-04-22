@@ -315,44 +315,69 @@ while True:
         if matrix[0][1][1] == True:#KNIGHT BLACK 0
             if (matrix[0][1][0].x + 80 < mousePos.x < matrix[0][1][0].x + 160 and matrix[0][1][0].y - 160 < mousePos.y < matrix[0][1][0].y - 80):#Upper right corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x+80,matrix[0][1][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x + 160 < mousePos.x < matrix[0][1][0].x + 240 and matrix[0][1][0].y - 80 < mousePos.y < matrix[0][1][0].y):#Upper right down corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x+160,matrix[0][1][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x + 160 < mousePos.x < matrix[0][1][0].x + 240 and matrix[0][1][0].y + 80 < mousePos.y < matrix[0][1][0].y + 160):#Lower right up corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x+160,matrix[0][1][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x + 80 < mousePos.x < matrix[0][1][0].x + 160 and matrix[0][1][0].y + 160 < mousePos.y < matrix[0][1][0].y + 240):#Lower right corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x+80,matrix[0][1][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x - 80 < mousePos.x < matrix[0][1][0].x and matrix[0][1][0].y + 160 < mousePos.y < matrix[0][1][0].y + 240):#Lower left corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x-80,matrix[0][1][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x - 160 < mousePos.x < matrix[0][1][0].x - 80 and matrix[0][1][0].y + 80 < mousePos.y < matrix[0][1][0].y + 160):#Lower left up corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x-160,matrix[0][1][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x - 160 < mousePos.x < matrix[0][1][0].x - 80 and matrix[0][1][0].y - 80 < mousePos.y < matrix[0][1][0].y ):#Upper left down corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x-160,matrix[0][1][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][1][0].x - 80 < mousePos.x < matrix[0][1][0].x and matrix[0][1][0].y - 160 < mousePos.y < matrix[0][1][0].y - 80 ):#Upper left corner
                 matrix[0][1][0] = pygame.Vector2(matrix[0][1][0].x-80,matrix[0][1][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][1][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
+            #Death zone of knight
             if (matrix[0][1][0].x-80<mousePos.x<matrix[0][1][0].x+160 and matrix[0][1][0].y-80<mousePos.y<matrix[0][1][0].y+160 and (mousePos.x<matrix[0][1][0].x or mousePos.x>matrix[0][1][0].x+80 or mousePos.y<matrix[0][1][0].y or mousePos.y>matrix[0][1][0].y+80 )):
                 matrix[0][1][1] = False
                 mousePos = pygame.Vector2(-1,-1)
@@ -384,43 +409,67 @@ while True:
         if matrix[0][6][1] == True:#KNIGHT BLACK 1
             if (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80):#Upper right corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y):#Upper right down corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x + 160 < mousePos.x < matrix[0][6][0].x + 240 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower right up corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+160,matrix[0][6][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x + 80 < mousePos.x < matrix[0][6][0].x + 160 and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower right corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x+80,matrix[0][6][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y + 160 < mousePos.y < matrix[0][6][0].y + 240):#Lower left corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y + 80 < mousePos.y < matrix[0][6][0].y + 160):#Lower left up corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x - 160 < mousePos.x < matrix[0][6][0].x - 80 and matrix[0][6][0].y - 80 < mousePos.y < matrix[0][6][0].y ):#Upper left down corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-160,matrix[0][6][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             elif (matrix[0][6][0].x - 80 < mousePos.x < matrix[0][6][0].x and matrix[0][6][0].y - 160 < mousePos.y < matrix[0][6][0].y - 80 ):#Upper left corner
                 matrix[0][6][0] = pygame.Vector2(matrix[0][6][0].x-80,matrix[0][6][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][6][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[0][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = True
             if (matrix[0][6][0].x-80<mousePos.x<matrix[0][6][0].x+160 and matrix[0][6][0].y-80<mousePos.y<matrix[0][6][0].y+160 and (mousePos.x<matrix[0][6][0].x or mousePos.x>matrix[0][6][0].x+80 or mousePos.y<matrix[0][6][0].y or mousePos.y>matrix[0][6][0].y+80 )):
                 matrix[0][6][1] = False
@@ -761,43 +810,67 @@ while True:
         if matrix[1][1][1] == True:#KNIGHT WHITE 0
             if (matrix[1][1][0].x + 80 < mousePos.x < matrix[1][1][0].x + 160 and matrix[1][1][0].y - 160 < mousePos.y < matrix[1][1][0].y - 80):#Upper right corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+80,matrix[1][1][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x + 160 < mousePos.x < matrix[1][1][0].x + 240 and matrix[1][1][0].y - 80 < mousePos.y < matrix[1][1][0].y):#Upper right down corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+160,matrix[1][1][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x + 160 < mousePos.x < matrix[1][1][0].x + 240 and matrix[1][1][0].y + 80 < mousePos.y < matrix[1][1][0].y + 160):#Lower right up corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+160,matrix[1][1][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x + 80 < mousePos.x < matrix[1][1][0].x + 160 and matrix[1][1][0].y + 160 < mousePos.y < matrix[1][1][0].y + 240):#Lower right corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x+80,matrix[1][1][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x - 80 < mousePos.x < matrix[1][1][0].x and matrix[1][1][0].y + 160 < mousePos.y < matrix[1][1][0].y + 240):#Lower left corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-80,matrix[1][1][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x - 160 < mousePos.x < matrix[1][1][0].x - 80 and matrix[1][1][0].y + 80 < mousePos.y < matrix[1][1][0].y + 160):#Lower left up corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-160,matrix[1][1][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x - 160 < mousePos.x < matrix[1][1][0].x - 80 and matrix[1][1][0].y - 80 < mousePos.y < matrix[1][1][0].y ):#Upper left down corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-160,matrix[1][1][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][1][0].x - 80 < mousePos.x < matrix[1][1][0].x and matrix[1][1][0].y - 160 < mousePos.y < matrix[1][1][0].y - 80 ):#Upper left corner
                 matrix[1][1][0] = pygame.Vector2(matrix[1][1][0].x-80,matrix[1][1][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][1][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][1][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             if (matrix[1][1][0].x-80<mousePos.x<matrix[1][1][0].x+160 and matrix[1][1][0].y-80<mousePos.y<matrix[1][1][0].y+160 and (mousePos.x<matrix[1][1][0].x or mousePos.x>matrix[1][1][0].x+80 or mousePos.y<matrix[1][1][0].y or mousePos.y>matrix[1][1][0].y+80 )):
                 matrix[1][1][1] = False
@@ -830,43 +903,67 @@ while True:
         if matrix[1][6][1] == True:#KNIGHT WHITE 1
             if (matrix[1][6][0].x + 80 < mousePos.x < matrix[1][6][0].x + 160 and matrix[1][6][0].y - 160 < mousePos.y < matrix[1][6][0].y - 80):#Upper right corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+80,matrix[1][6][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x + 160 < mousePos.x < matrix[1][6][0].x + 240 and matrix[1][6][0].y - 80 < mousePos.y < matrix[1][6][0].y):#Upper right down corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+160,matrix[1][6][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x + 160 < mousePos.x < matrix[1][6][0].x + 240 and matrix[1][6][0].y + 80 < mousePos.y < matrix[1][6][0].y + 160):#Lower right up corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+160,matrix[1][6][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x + 80 < mousePos.x < matrix[1][6][0].x + 160 and matrix[1][6][0].y + 160 < mousePos.y < matrix[1][6][0].y + 240):#Lower right corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x+80,matrix[1][6][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x - 80 < mousePos.x < matrix[1][6][0].x and matrix[1][6][0].y + 160 < mousePos.y < matrix[1][6][0].y + 240):#Lower left corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-80,matrix[1][6][0].y+160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x - 160 < mousePos.x < matrix[1][6][0].x - 80 and matrix[1][6][0].y + 80 < mousePos.y < matrix[1][6][0].y + 160):#Lower left up corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-160,matrix[1][6][0].y+80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x - 160 < mousePos.x < matrix[1][6][0].x - 80 and matrix[1][6][0].y - 80 < mousePos.y < matrix[1][6][0].y ):#Upper left down corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-160,matrix[1][6][0].y-80)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             elif (matrix[1][6][0].x - 80 < mousePos.x < matrix[1][6][0].x and matrix[1][6][0].y - 160 < mousePos.y < matrix[1][6][0].y - 80 ):#Upper left corner
                 matrix[1][6][0] = pygame.Vector2(matrix[1][6][0].x-80,matrix[1][6][0].y-160)
+                for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][6][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                 matrix[1][6][1] = False
-                mousePos = pygame.Vector2(-1,-1)
                 matrix[2] = False
             if (matrix[1][6][0].x-80<mousePos.x<matrix[1][6][0].x+160 and matrix[1][6][0].y-80<mousePos.y<matrix[1][6][0].y+160 and (mousePos.x<matrix[1][6][0].x or mousePos.x>matrix[1][6][0].x+80 or mousePos.y<matrix[1][6][0].y or mousePos.y>matrix[1][6][0].y+80 )):
                 matrix[1][6][1] = False
