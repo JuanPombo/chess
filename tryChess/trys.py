@@ -184,51 +184,75 @@ while True:
             if (((-80 + matrix[0][4][0].x)<mousePos.x<(matrix[0][4][0].x + 160)) and ((-80 + matrix[0][4][0].y)<mousePos.y<(matrix[0][4][0].y + 160))):#Range of the King
                 if ((mousePos.x > matrix[0][4][0].x + 80) and (mousePos.y < matrix[0][4][0].y)): #Upper right diagonally 
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x + 80,matrix[0][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1) 
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.x > matrix[0][4][0].x+80) and (mousePos.y > matrix[0][4][0].y+80)):#Lower right diagonally
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x + 80,matrix[0][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.x < matrix[0][4][0].x) and (mousePos.y < matrix[0][4][0].y)):#Upper left diagonally
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x-80,matrix[0][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.x < matrix[0][4][0].x) and (mousePos.y > matrix[0][4][0].y+80)):#Lowerleft diagonally
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x-80,matrix[0][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.y < matrix[0][4][0].y)):#Upper
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x,matrix[0][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.y > matrix[0][4][0].y+80)):#Lower
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x,matrix[0][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.x < matrix[0][4][0].x)):#left
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x-80,matrix[0][4][0].y)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
                 elif ((mousePos.x > matrix[0][4][0].x+80)):#Right
                     matrix[0][4][0] = pygame.Vector2(matrix[0][4][0].x+80,matrix[0][4][0].y)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[0][4][0] == matrix[1][j][0]):
+                                matrix[1][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[0][4][1] = False
                     matrix[0][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
             else:
                 matrix[0][4][1] = False
@@ -703,51 +727,75 @@ while True:
             if (((-80 + matrix[1][4][0].x)<mousePos.x<(matrix[1][4][0].x + 160)) and ((-80 + matrix[1][4][0].y)<mousePos.y<(matrix[1][4][0].y + 160))):#Range of the King
                 if ((mousePos.x > matrix[1][4][0].x + 80) and (mousePos.y < matrix[1][4][0].y)): #Upper right diagonally 
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x + 80,matrix[1][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.x > matrix[1][4][0].x+80) and (mousePos.y > matrix[1][4][0].y+80)):#Lower right diagonally
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x + 80,matrix[1][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.x < matrix[1][4][0].x) and (mousePos.y < matrix[1][4][0].y)):#Upper left diagonally
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.x < matrix[1][4][0].x) and (mousePos.y > matrix[1][4][0].y+80)):#Lowerleft diagonally
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.y < matrix[1][4][0].y)):#Upper
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x,matrix[1][4][0].y-80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.y > matrix[1][4][0].y+80)):#Lower
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x,matrix[1][4][0].y+80)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.x < matrix[1][4][0].x)):#left
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x-80,matrix[1][4][0].y)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
                 elif ((mousePos.x > matrix[1][4][0].x+80)):#Right
                     matrix[1][4][0] = pygame.Vector2(matrix[1][4][0].x+80,matrix[1][4][0].y)
+                    for j in range(16): #Check if the piece has eaten other piece
+                            if (matrix[1][4][0] == matrix[0][j][0]):
+                                matrix[0][j][0] = pygame.Vector2(640,640)
+                                mousePos = pygame.Vector2(-1,-1)
                     matrix[1][4][1] = False
                     matrix[1][4][2] = False #The castling has been losted
-                    mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = False
             else:
                 matrix[1][4][1] = False
