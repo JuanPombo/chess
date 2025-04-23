@@ -1321,7 +1321,7 @@ while True:
                             matrix[1][i][2] = False
                             mousePos = pygame.Vector2(-1,-1)
                             matrix[2] = False
-                for j in range(16):#Check if front of it is any piece for can print blue hints
+                for j in range(16):#Check if front of it is any piece for can print blue hints -
                     if ((matrix[1][i][0].x , matrix[1][i][0].y-80) == (matrix[0][j][0].x,matrix[0][j][0].y)):
                         flag = True
                 if flag == False:
