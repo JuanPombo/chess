@@ -11,7 +11,9 @@ BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255) 
 RED   = (255,   0,   0) 
 GREEN = (  0, 255,   0) 
-BLUE  = (  0,   0, 255)
+BLUE  = (  0,   0, 255, 80)
+
+transparentSurface = pygame.Surface((80,80), pygame.SRCALPHA)
 
 sizePiece = (80,80)
 #BLACK PIECES
@@ -94,6 +96,7 @@ matrix = [[[rookB0Pos,False,True],[knightB0Pos,False],[bishopB0Pos,False],[queen
            [True]]
 move = pygame.Vector2(0,0)
 matrix[2] = True
+cont = 0
 while True:
     for event in pygame.event.get():#Exit event
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -114,7 +117,6 @@ while True:
                 pygame.draw.rect(DISPLAYSURF,WHITE,(j+80,i,80,80))
                 if (j >= 480):
                     white = True
-
     #BLACK PIECES
     DISPLAYSURF.blit(kingB,matrix[0][4][0])
     DISPLAYSURF.blit(queenB,matrix[0][3][0])
@@ -149,6 +151,7 @@ while True:
     DISPLAYSURF.blit(pawnW5,matrix[1][13][0])
     DISPLAYSURF.blit(pawnW6,matrix[1][14][0])
     DISPLAYSURF.blit(pawnW7,matrix[1][15][0])
+    pygame.draw.rect(transparentSurface, BLUE, (0,0, 80, 80))
 
     if matrix[2] != True:#Turn in check the clikc on the Black pieces for avoid error 
         for i in range(1):
@@ -708,6 +711,8 @@ while True:
         for i in range(8,16): #PEON'S BLACK 0-7
             if (matrix[0][i][1] == True):
                 if matrix[0][i][2] == True:
+                    DISPLAYSURF.blit(transparentSurface, (matrix[0][i][0].x,matrix[0][i][0].y+80))
+                    DISPLAYSURF.blit(transparentSurface, (matrix[0][i][0].x,matrix[0][i][0].y+160))
                     if (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+240):
                         if (mousePos.y - matrix[0][i][0].y < 160):
                             matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x,matrix[0][i][0].y+80)
@@ -721,12 +726,22 @@ while True:
                             matrix[0][i][2] = False
                             mousePos = pygame.Vector2(-1,-1)
                             matrix[2] = True
-                elif (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):
+                for j in range(16):#Check if front of it isn't pieces and print blue hints
+                    if ((matrix[0][i][0].x , matrix[0][i][0].y + 80) != (matrix[1][j][0].x , matrix[1][j][0].y )):
+                        print(matrix[0][0][0].x == matrix[0][0][0].x)
+                        DISPLAYSURF.blit(transparentSurface, (matrix[0][i][0].x,matrix[0][i][0].y+80))
+                        
+                if (matrix[0][i][0].x<mousePos.x<matrix[0][i][0].x+80 and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):
                     matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x,matrix[0][i][0].y+80)
                     matrix[0][i][1] = False
                     mousePos = pygame.Vector2(-1,-1)
                     matrix[2] = True
-                elif (matrix[0][i][0].x-80<mousePos.x<matrix[0][i][0].x and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):#Capture to the left
+                for j in range(16):#Print the blue hints when the pawn can capture
+                    if((matrix[0][i][0].x - 80, matrix[0][i][0].y + 80) == (matrix[1][j][0].x , matrix[1][j][0].y )):
+                        DISPLAYSURF.blit(transparentSurface, (matrix[0][i][0].x-80,matrix[0][i][0].y+80))
+                    elif((matrix[0][i][0].x + 80, matrix[0][i][0].y + 80) == (matrix[1][j][0].x , matrix[1][j][0].y )):
+                        DISPLAYSURF.blit(transparentSurface, (matrix[0][i][0].x+80,matrix[0][i][0].y+80))
+                if (matrix[0][i][0].x-80<mousePos.x<matrix[0][i][0].x and matrix[0][i][0].y+80<mousePos.y<matrix[0][i][0].y+160):#Capture to the left
                      for j in range(16):
                           if(matrix[0][i][0].x-80 == matrix[1][j][0].x and matrix[0][i][0].y+80 == matrix[1][j][0].y):
                                 matrix[0][i][0] = pygame.Vector2(matrix[0][i][0].x-80,matrix[0][i][0].y+80)
@@ -1329,6 +1344,5 @@ while True:
                 if not (matrix[1][i][0].x<mousePos.x<matrix[1][i][0].x+80 and matrix[1][i][0].y-80<mousePos.y<matrix[1][i][0].y+80):
                     matrix[1][i][1] = False
 
-    print(matrix[2])   
     pygame.display.flip()       
     pygame.display.update()
